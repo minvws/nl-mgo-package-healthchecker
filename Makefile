@@ -6,6 +6,9 @@ all: help
 run:
 	docker compose up -d
 
+shell:
+	docker compose exec package bash
+
 ruff-lint:
 	ruff check
 
