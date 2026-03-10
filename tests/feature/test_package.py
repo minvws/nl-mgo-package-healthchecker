@@ -21,7 +21,9 @@ class UnhealthyTestHealthChecker(HealthChecker):
 
 
 class TestPackage:
-    def test_it_returns_a_healthy_status(self) -> None:
+    def test_health_endpoint_when_all_components_are_healthy_returns_a_healthy_status(
+        self,
+    ) -> None:
         def get_collection() -> HealthCheckerCollection:
             collection = HealthCheckerCollection()
 
@@ -46,7 +48,9 @@ class TestPackage:
             ],
         }
 
-    def test_it_returns_an_unhealthy_status(self) -> None:
+    def test_health_endpoint_when_any_component_is_unhealthy_returns_an_unhealthy_status(
+        self,
+    ) -> None:
         def get_collection() -> HealthCheckerCollection:
             collection = HealthCheckerCollection()
 

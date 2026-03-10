@@ -6,14 +6,14 @@ from mgo_healthchecker.services.redis import RedisHealthChecker
 
 
 class TestRedisHealthChecker:
-    def test_name_is_set(self, mocker: MockerFixture) -> None:
+    def test_init_sets_name(self, mocker: MockerFixture) -> None:
         mock_redis_client = mocker.Mock(spec=Redis)
 
         sut = RedisHealthChecker(redis_client=mock_redis_client)
 
         assert sut.name == "redis"
 
-    def test_check_returns_true_if_ping_succeeds(self, mocker: MockerFixture) -> None:
+    def test_check_when_ping_succeeds_returns_true(self, mocker: MockerFixture) -> None:
         mock_redis_client = mocker.Mock(spec=Redis)
 
         mock_redis_client.ping.return_value = True
@@ -24,7 +24,7 @@ class TestRedisHealthChecker:
 
         mock_redis_client.ping.assert_called_once()
 
-    def test_check_returns_false_on_failure(self, mocker: MockerFixture) -> None:
+    def test_check_when_ping_fails_returns_false(self, mocker: MockerFixture) -> None:
         mock_redis_client = mocker.Mock(spec=Redis)
         mock_logger = mocker.patch("mgo_healthchecker.services.redis.logger")
         exception = RedisError("Redis error")
