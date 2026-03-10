@@ -1,6 +1,6 @@
 from typing import List
 
-from .services import HealthChecker
+from .services.interface import HealthChecker
 
 
 class HealthCheckerCollection(List[HealthChecker]):

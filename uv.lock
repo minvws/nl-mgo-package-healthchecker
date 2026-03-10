@@ -215,7 +215,13 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "fastapi" },
+]
+
+[package.optional-dependencies]
+redis = [
     { name = "redis" },
+]
+sqlalchemy = [
     { name = "sqlalchemy" },
 ]
 
@@ -233,9 +239,10 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "fastapi", specifier = ">=0.125,<0.130" },
-    { name = "redis", specifier = ">=5.3.1,<6" },
-    { name = "sqlalchemy", specifier = ">=2.0.45,<3" },
+    { name = "redis", marker = "extra == 'redis'", specifier = ">=5.3.1,<6" },
+    { name = "sqlalchemy", marker = "extra == 'sqlalchemy'", specifier = ">=2.0.45,<3" },
 ]
+provides-extras = ["redis", "sqlalchemy"]
 
 [package.metadata.requires-dev]
 dev = [
