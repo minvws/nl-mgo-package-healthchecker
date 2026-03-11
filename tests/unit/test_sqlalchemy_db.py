@@ -3,7 +3,7 @@ from pytest_mock import MockerFixture
 from sqlalchemy import Connection
 from sqlalchemy.engine import Engine
 
-from mgo_healthchecker.services.sqlalchemy_db import SqlAlchemyDbHealthChecker
+from mgo_healthchecker.sqlalchemy_db import SqlAlchemyDbHealthChecker
 
 
 class TestSqlAlchemyDbHealthChecker:
@@ -34,7 +34,7 @@ class TestSqlAlchemyDbHealthChecker:
         self, mocker: MockerFixture
     ) -> None:
         mock_db_engine = mocker.Mock(spec=Engine)
-        mock_logger = mocker.patch("mgo_healthchecker.services.sqlalchemy_db.logger")
+        mock_logger = mocker.patch("mgo_healthchecker.sqlalchemy_db.logger")
         exception = Exception("Connection failed")
 
         mock_db_engine.connect = mocker.MagicMock()

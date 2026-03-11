@@ -16,6 +16,8 @@ dev = [
     "faker>=40.8.0",
     "httpx>=0.28.1",
     "mypy>=1.19.1",
+    "pre-commit>=4.5.1",
+    "pre-commit-uv>=4.2.1",
     "pytest",
     "pytest-cov>=7.0.0",
     "pytest-mock>=3.15.1",

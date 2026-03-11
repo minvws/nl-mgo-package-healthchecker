@@ -3,33 +3,27 @@ COV_REPORT ?= term-missing
 .SILENT: help
 all: help
 
-run:
-	docker compose up -d
-
-shell:
-	docker compose exec package bash
-
-ruff-lint:
+ruff-lint:  ## Run ruff lint checks
 	ruff check
 
-ruff-lint-fix:
+ruff-lint-fix:  ## Fix ruff lint issues
 	ruff check --fix --show-fixes
 
-ruff-format:
+ruff-format:  ## Show ruff format differences
 	ruff format --diff
 
-ruff-format-fix:
+ruff-format-fix:  ## Fix ruff format issues
 	ruff format
 
-mypy:
+mypy:  ## Run type checks
 	mypy
 
-pytest:
+pytest:  ## Run tests with coverage
 	pytest --cov --cov-fail-under=100 --cov-branch --cov-report=$(COV_REPORT)
 
-check: ruff-lint ruff-format mypy pytest
+check: ruff-lint ruff-format mypy pytest  ## Run all checks
 
-fix: ruff-lint-fix ruff-format-fix
+fix: ruff-lint-fix ruff-format-fix  ## Fix the code style issues
 
 help: ## Display available commands
 	echo "Available make commands:"

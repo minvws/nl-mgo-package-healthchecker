@@ -2,7 +2,7 @@ from pytest_mock import MockerFixture
 
 from redis import Redis, RedisError
 
-from mgo_healthchecker.services.redis import RedisHealthChecker
+from mgo_healthchecker.redis import RedisHealthChecker
 
 
 class TestRedisHealthChecker:
@@ -26,7 +26,7 @@ class TestRedisHealthChecker:
 
     def test_check_when_ping_fails_returns_false(self, mocker: MockerFixture) -> None:
         mock_redis_client = mocker.Mock(spec=Redis)
-        mock_logger = mocker.patch("mgo_healthchecker.services.redis.logger")
+        mock_logger = mocker.patch("mgo_healthchecker.redis.logger")
         exception = RedisError("Redis error")
 
         mock_redis_client.ping.side_effect = exception

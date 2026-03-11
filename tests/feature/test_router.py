@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from mgo_healthchecker.services.interface import HealthChecker
+from mgo_healthchecker.interface import HealthChecker
 from mgo_healthchecker.routers import create_router
 from mgo_healthchecker.utils import HealthCheckerCollection
 
@@ -20,7 +20,7 @@ class UnhealthyTestHealthChecker(HealthChecker):
         return False
 
 
-class TestPackage:
+class TestRouter:
     def test_health_endpoint_when_all_components_are_healthy_returns_a_healthy_status(
         self,
     ) -> None:
