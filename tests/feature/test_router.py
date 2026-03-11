@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
 from mgo_healthchecker.interface import HealthChecker
-from mgo_healthchecker.routers import create_router
+from mgo_healthchecker.routers import init_router
 from mgo_healthchecker.utils import HealthCheckerCollection
 
 
@@ -32,7 +32,7 @@ class TestRouter:
             return collection
 
         app = FastAPI()
-        app.include_router(create_router(get_collection))
+        init_router(app, get_collection)
         client = TestClient(app)
 
         response = client.get("/health")
@@ -60,7 +60,7 @@ class TestRouter:
             return collection
 
         app = FastAPI()
-        app.include_router(create_router(get_collection))
+        init_router(app, get_collection)
         client = TestClient(app)
 
         response = client.get("/health")

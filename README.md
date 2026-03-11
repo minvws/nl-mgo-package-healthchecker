@@ -25,8 +25,8 @@ it can be created here once and used by all.
 
 ## Features
 
-- It provides an `APIRouter` to be registered by the implementing application
-  built on FastAPI.
+- It provides an initialization method that creates an `APIRouter` and registers
+  it on the provided FastAPI app
 - It provides a library of health checkers to choose from. Simply add the ones
   you require to the collection and they will be included in the health status
   result.
@@ -37,8 +37,8 @@ Follow the guide below to add this package to your own application.
 
 > [!NOTE]
 > At this point, the package is plug-n-play for FastAPI applications. It
-> exposes a factory method for a `APIRouter` you can wire into your FastAPI app.
-> You could in theory use the individual health checkers directly. This would
+> exposes a init method that wires an `APIRouter` into your FastAPI app. You
+> could in theory use the individual health checkers directly. This would
 > require some custom code to print the health check result in a browser.
 
 ### Adding the dependency
@@ -68,9 +68,9 @@ uv add "mgo-healthchecker[redis] @ git+ssh://git@github.com/minvws/nl-mgo-packag
 
 ### Bootstrapping the package
 
-This packages exposes a factory method for creating the `APIRouter` that will
-render the health check result. Import from
-`mgo_healthchecker.routers.create_router`.
+This packages exposes a init method that creates the `APIRouter` that will
+render the health check result and binds it to the FastAPI application instance.
+Import from `mgo_healthchecker.routers.init_router`.
 
 The route operation method uses FastAPI's `Depends` to invoke a callable
 providing an instance of `HealthCheckCollection`. This collection is a simple,
@@ -85,7 +85,7 @@ library:
 ```python
 import inject
 from fastapi import FastAPI
-from mgo_healthchecker.routers import create_router
+from mgo_healthchecker.routers import init_router as init_healthchecker_router
 from mgo_healthchecker.utils import HealthCheckerCollection
 
 
@@ -96,12 +96,10 @@ def resolve_health_checker_collection() -> HealthCheckerCollection:
 def run() -> FastAPI:
     app = FastAPI(title=acme)
 
-    healthcheck_router = create_router(resolve_health_checker_collection)
-
-    app.include_router(healthcheck_router)
+    init_healthchecker_router(resolve_health_checker_collection)
 ```
 
-Once the health check router is included in the FastAPI app, open
+Once the health check router is created and included in the FastAPI app, open
 http://yourapp/health to view the health status of your app and its components.
 
 ## Local development
@@ -112,20 +110,13 @@ Please install the below programs if not present:
 
 - [Git](https://git-scm.com/)
 - [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
 - [Make](https://www.gnu.org/software/make/)
 
 ### Setup
 
-You can either open a Devcontainer workspace or start the Docker container and
-open a shell.
-
-For the latter, use the following Make commands:
-
-```bash
-make run
-make shell
-```
+This project uses a Devcontainer workspace for local development. The base
+Python image, all necessary system and application packages and the workspace
+extensions and configurations are found in `.devcontainer/devcontainer.json`.
 
 ### Code quality
 

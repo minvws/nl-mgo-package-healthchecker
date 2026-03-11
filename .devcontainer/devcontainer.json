@@ -5,7 +5,7 @@
     "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {},
     "ghcr.io/jsburckhardt/devcontainer-features/ruff:1": {}
   },
-  "postCreateCommand": "uv sync --locked --all-extras",
+  "postCreateCommand": "uv sync --all-extras --locked",
   "customizations": {
     "vscode": {
         "extensions": [
@@ -25,7 +25,8 @@
                     "source.fixAll.ruff": true,
                     "source.organizeImports.ruff": true
                 }
-            }
+            },
+            "mypy-type-checker.importStrategy": "fromEnvironment"
         }
     }
   }

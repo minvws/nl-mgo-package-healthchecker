@@ -1,12 +1,13 @@
 from typing import Annotated, Callable
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, FastAPI
 from fastapi.responses import JSONResponse
 
 from .utils import HealthCheckerCollection
 
 
-def create_router(
+def init_router(
+    app: FastAPI,
     get_health_checker_collection: Callable[[], HealthCheckerCollection],
 ) -> APIRouter:
     router = APIRouter()
@@ -26,5 +27,7 @@ def create_router(
             content={"is_healthy": is_healthy, "components": components},
             status_code=200 if is_healthy else 503,
         )
+
+    app.include_router(router)
 
     return router
