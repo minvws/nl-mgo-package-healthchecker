@@ -9,8 +9,8 @@ on:
             - main
 
 jobs:
-    setup:
-        name: Setup
+    quality-checks:
+        name: Lint, Type Check & Test
         runs-on: ubuntu-latest
 
         steps:
@@ -43,3 +43,22 @@ jobs:
               with:
                 name: mgo-healthchecker-coverage
                 path: coverage.xml
+
+    sonar-analysis:
+      name: Static Analysis (SonarQube)
+      runs-on: ubuntu-latest
+      needs: quality-checks
+      steps:
+          - name: Checkout repository
+            uses: actions/checkout@v6
+            with:
+                fetch-depth: 0
+
+          - name: Download coverage report
+            uses: actions/download-artifact@v8
+
+          - name: Run SonarQube scan
+            uses: minvws/action-sonarqube@v1
+            with:
+                sonar-token: ${{ secrets.SONAR_TOKEN }}
+                allow-run-on-dependabot: 'true'
