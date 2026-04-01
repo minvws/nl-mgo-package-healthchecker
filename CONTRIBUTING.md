@@ -1,6 +1,6 @@
 # Contributing to MGO DVP Proxy
 
-Thank you for considering contributing to the MGO DVP Proxy! We welcome contributions from everyone. Below are some guidelines to help you get started.
+Thank you for considering contributing to the MGO Health Checker! We welcome contributions from everyone. Below are some guidelines to help you get started.
 
 ## How to Report Issues
 
@@ -8,12 +8,12 @@ If you encounter any issues or have suggestions for improvements, please feel fr
 
 ## How to Submit Pull Requests
 
-1. Fork the repository and create your branch from `develop`.
+1. Fork the repository and create your branch from `main`.
 2. If you have added code that should be tested, add tests.
-3. Ensure the test suite passes (`make test` from the `./services/proxy` directory).
-4. Make sure your code lints (`make lint` from the `./services/proxy` directory).
-5. Make sure your code passes the analyzers (`make check` from the `./services/proxy` directory).
-6. Submit a pull request to the `develop` branch with a clear description of your changes.
+3. Ensure the test suite passes (`make test`).
+4. Make sure your code lints (`make lint`).
+5. Make sure your code passes the analyzers (`make check`).
+6. Submit a pull request to the `main` branch with a clear description of your changes.
 
 ## Coding Standards
 
