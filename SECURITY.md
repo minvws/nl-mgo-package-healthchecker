@@ -11,7 +11,7 @@ Submit your findings via the Dutch Government GOV-CERT:
 
  <https://www.ncsc.nl/contact/kwetsbaarheid-melden>
 
-And reference the "MinVWS/CIO-office, Laravel Starterkit (minvws/icore-laravel-starter)" in your report.
+And reference the "MinVWS/CIO-office, MGO Health Checker (minvws/nl-mgo-package-healthchecker)" in your report.
 
 Please do not publicly disclose these details without contacting us first. In return we will
 investigate all received vulnerability reports and, where needed, will take appropriate action
