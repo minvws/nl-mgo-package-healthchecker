@@ -1,4 +1,4 @@
-# Contributing to MGO DVP Proxy
+# Contributing to MGO Health Checker
 
 Thank you for considering contributing to the MGO Health Checker! We welcome contributions from everyone. Below are some guidelines to help you get started.
 
