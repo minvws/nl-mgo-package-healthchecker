@@ -17,23 +17,23 @@ diverse, inclusive, and healthy community.
 Examples of behavior that contributes to a positive environment for our
 community include:
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes,
+- Demonstrating empathy and kindness toward other people
+- Being respectful of differing opinions, viewpoints, and experiences
+- Giving and gracefully accepting constructive feedback
+- Accepting responsibility and apologizing to those affected by our mistakes,
   and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the overall
+- Focusing on what is best not just for us as individuals, but for the overall
   community
 
 Examples of unacceptable behavior include:
 
-* The use of sexualized language or imagery, and sexual attention or advances of
+- The use of sexualized language or imagery, and sexual attention or advances of
   any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email address,
+- Trolling, insulting or derogatory comments, and personal or political attacks
+- Public or private harassment
+- Publishing others' private information, such as a physical or email address,
   without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
+- Other conduct which could reasonably be considered inappropriate in a
   professional setting
 
 ## Enforcement Responsibilities
@@ -59,12 +59,17 @@ representative at an online or offline event.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-[INSERT CONTACT METHOD].
-All complaints will be reviewed and investigated promptly and fairly.
+reported by contacting the project team at
+[https://www.government.nl/contact/making-a-complaint](https://www.government.nl/contact/making-a-complaint).
+All complaints will be reviewed and investigated and will result in a response
+that is deemed necessary and appropriate to the circumstances. The project team
+is obligated to maintain confidentiality with regard to the reporter of an
+incident. Further details of specific enforcement policies may be posted
+separately.
 
-All community leaders are obligated to respect the privacy and security of the
-reporter of any incident.
+Project maintainers who do not follow or enforce the Code of Conduct in good
+faith may face temporary or permanent repercussions as determined by other
+members of the project's leadership.
 
 ## Enforcement Guidelines
 
@@ -118,8 +123,8 @@ This Code of Conduct is adapted from the [Contributor Covenant][homepage],
 version 2.1, available at
 [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
 
-Community Impact Guidelines were inspired by
-[Mozilla's code of conduct enforcement ladder][Mozilla CoC].
+Community Impact Guidelines were inspired by [Mozilla's code of conduct
+enforcement ladder][Mozilla CoC].
 
 For answers to common questions about this code of conduct, see the FAQ at
 [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at
