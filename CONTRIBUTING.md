@@ -11,9 +11,8 @@ If you encounter any issues or have suggestions for improvements, please feel fr
 1. Fork the repository and create your branch from `main`.
 2. If you have added code that should be tested, add tests.
 3. Ensure the test suite passes (`make test`).
-4. Make sure your code lints (`make lint`).
-5. Make sure your code passes the analyzers (`make check`).
-6. Submit a pull request to the `main` branch with a clear description of your changes.
+4. Make sure your code passes the linters and analyzers (`make check`).
+5. Submit a pull request to the `main` branch with a clear description of your changes.
 
 ## Coding Standards
 
