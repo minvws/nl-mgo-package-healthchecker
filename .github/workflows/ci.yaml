@@ -41,7 +41,7 @@ jobs:
             - name: Upload coverage report
               uses: actions/upload-artifact@v7
               with:
-                name: mgo-healthchecker-coverage
+                name: mgo-keystore-repository-coverage
                 path: coverage.xml
 
     sonar-analysis:
