@@ -15,7 +15,7 @@ jobs:
 
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v6
+              uses: actions/checkout@v7
 
             - name: Setup Python environment with uv
               uses: astral-sh/setup-uv@v7
@@ -50,7 +50,7 @@ jobs:
       needs: quality-checks
       steps:
           - name: Checkout repository
-            uses: actions/checkout@v6
+            uses: actions/checkout@v7
             with:
                 fetch-depth: 0
 
