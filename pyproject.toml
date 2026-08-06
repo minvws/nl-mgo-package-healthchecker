@@ -14,7 +14,7 @@ sqlalchemy = ["sqlalchemy>=2.0.45,<3"]
 [dependency-groups]
 dev = [
     "faker>=40.8.0",
-    "httpx>=0.28.1",
+    "httpx2>=2.9.1",
     "mypy>=1.19.1",
     "pre-commit>=4.5.1",
     "pre-commit-uv>=4.2.1",
