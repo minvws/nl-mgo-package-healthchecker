@@ -1,6 +1,10 @@
 {
   "name": "Python (uv)",
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "containerEnv": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
   "features": {
     "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {},
     "ghcr.io/jsburckhardt/devcontainer-features/ruff:1": {}
@@ -18,6 +22,7 @@
         ],
         "settings": {
             "python.testing.pytestEnabled": true,
+            "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
             "[python]": {
                 "editor.formatOnSave": true,
                 "editor.defaultFormatter": "charliermarsh.ruff",
